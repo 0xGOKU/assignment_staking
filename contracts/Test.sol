@@ -12,7 +12,7 @@ abstract contract Test is ERC20, Ownable, StakeableToken {
     /* TEST FUNCTIONS */
 
     function setHoursForStake(address stakeHolder, uint256 _hours)
-        external
+        public
         onlyOwner
     {
         _stakes[stakeHolder].sinceStaking = block.timestamp.sub(
@@ -21,7 +21,7 @@ abstract contract Test is ERC20, Ownable, StakeableToken {
     }
 
     function setHoursForClaimed(address stakeHolder, uint256 _hours)
-        external
+        public
         onlyOwner
     {
         _stakes[stakeHolder].sinceClaimed = block.timestamp.sub(
