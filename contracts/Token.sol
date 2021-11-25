@@ -8,7 +8,8 @@ import "./StakeableToken.sol";
 import "./Test.sol";
 
 contract Token is ERC20, Ownable, StakeableToken, Test {
-    using SafeMath for uint;
+    using SafeMath for uint256;
+
     constructor(address _owner, uint256 initialSupply)
         ERC20("MyCoolToken", "MCT")
     {
