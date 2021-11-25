@@ -88,7 +88,7 @@ describe("StakeableToken", () => {
     let hours = [0, 1, 729, 8670];
     for (let i = 0; i < hours.length; i++) {
       await token.methods
-        ._setHoursForStake(accounts[0], hours[i])
+        .setHoursForStake(accounts[0], hours[i])
         .send({ from: accounts[0], gas: "50000" });
       let reward = await token.methods.claim().call();
       let expectedAward = Math.round(rate * hours[i] * 10000000) / 10000000;
@@ -109,7 +109,7 @@ describe("StakeableToken", () => {
       });
 
     await token.methods
-      ._setHoursForStake(accounts[0], 729)
+      .setHoursForStake(accounts[0], 729)
       .send({ from: accounts[0], gas: "50000" });
 
     let stake = await token.methods.getStake(accounts[0]).call();
@@ -136,7 +136,7 @@ describe("StakeableToken", () => {
     );
 
     await token.methods
-      ._setHoursForClaimed(accounts[0], 24)
+      .setHoursForClaimed(accounts[0], 24)
       .send({ from: accounts[0], gas: "50000" });
 
     let balanceBeforeWithdraw = await token.methods
@@ -169,7 +169,7 @@ describe("StakeableToken", () => {
 
     const hours = 729;
     await token.methods
-      ._setHoursForStake(accounts[0], hours)
+      .setHoursForStake(accounts[0], hours)
       .send({ from: accounts[0], gas: "50000" });
 
     let stake = await token.methods.getStake(accounts[0]).call();

@@ -11,7 +11,7 @@ abstract contract Test is ERC20, Ownable, Stakeable {
 
     /* TEST FUNCTIONS */
 
-    function _setHoursForStake(address stakeHolder, uint256 _hours)
+    function setHoursForStake(address stakeHolder, uint256 _hours)
         external
         onlyOwner
     {
@@ -20,7 +20,7 @@ abstract contract Test is ERC20, Ownable, Stakeable {
         );
     }
 
-    function _setHoursForClaimed(address stakeHolder, uint256 _hours)
+    function setHoursForClaimed(address stakeHolder, uint256 _hours)
         external
         onlyOwner
     {
